@@ -1,0 +1,17 @@
+# Bleeding edge Django
+pyramid==1.10.4
+python-decouple==3.1
+
+# Database
+
+# Fixtures
+factory_boy==2.11.1
+
+# CI
+flake8==3.6.0
+
+# Setup tools
+setuptools==40.6.3
+
+# Dependencies
+pendulum==2.0.4
