@@ -3,6 +3,7 @@ pyramid==1.10.4
 python-decouple==3.1
 
 # Database
+mongoengine==0.18.2
 
 # Fixtures
 factory_boy==2.11.1
