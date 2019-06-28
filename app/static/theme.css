@@ -5,6 +5,9 @@ body {
   color: #ffffff;
   background: #bc2131;
 }
+.breadcrumb {
+  background: #bc2131;
+}
 h1,
 h2,
 h3,
