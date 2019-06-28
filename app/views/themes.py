@@ -10,6 +10,6 @@ class ThemeViews:
 
     @view_config(route_name='ranking')
     def ranking(self):
-        themes = sorted(Theme.objects(), key=lambda x: x.rating)
-        context = {'themes': themes}
+        themes = sorted(Theme.objects(), key=lambda x: x.rating, reverse=True)
+        context = {'themes': enumerate(themes)}
         return context
