@@ -45,7 +45,7 @@ build:
 install:
 	docker-compose run pyramid pip install -e ".[testing]"
 
-remove.volumes::
+remove.volumes:
 	docker-compose down
 	docker volume rm deeper_system_postgres_data
 
