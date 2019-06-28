@@ -4,4 +4,4 @@ def includeme(config):
     config.add_route('add_video', '/add_video')
     config.add_route('up', '/up')
     config.add_route('down', '/down')
-    config.add_route('hello', '/howdy')
+    config.add_route('ranking', '/ranking')
