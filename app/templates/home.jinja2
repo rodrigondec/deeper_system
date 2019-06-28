@@ -1,29 +1,57 @@
 {% extends "layout.jinja2" %}
 
 {% block content %}
-    <h1>Videos</h1>
-    <ul>
-    {% for video in videos %}
-        <li>
-            Name: {{ video.name }} |
-            Theme: {{ video.theme.name }} |
-            Thumbs up: {{ video.thumbs_up }} |
-            Thumbs down: {{ video.thumbs_down }}
-            <form action="/up" method="get" style="display: inline">
-                <input hidden type="text" name="id" value="{{ video.id }}">
-                <input type="submit" value="Up">
-            </form>
-            <form action="/down" method="get" style="display: inline">
-                <input hidden type="text" name="id" value="{{ video.id }}">
-                <input type="submit" value="Down">
-            </form>
-        </li>
-    {% endfor %}
-    </ul>
-    <form action="/add_video" method="get">
-        Nome: <input type="text" name="name">
-        Tema: <input type="text" name="theme">
-        <input type="submit" value="Cadastrar">
-        <input type="reset" value="Limpar">
-    </form>
+    <div class="col-md-8">
+        <h1>Listagem de Videos</h1>
+        <hr>
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <th class="col-md-4">Nome</th>
+                    <th class="col-md-3">Tema</th>
+                    <th class="col-md-1"></th>
+                    <th class="col-md-1"></th>
+                </thead>
+                {% for video in videos %}
+                <tr>
+                    <td>{{ video.name }}</td>
+                    <td>{{ video.theme.name }}</td>
+                    <td>
+                        <form action="/up" method="get" style="display: inline">
+                            <input hidden type="text" name="id" value="{{ video.id }}">
+                            <button class="btn btn-success" type="submit">
+                                <i class="glyphicon glyphicon-thumbs-up"></i> {{ video.thumbs_up }}
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/down" method="get" style="display: inline">
+                            <input hidden type="text" name="id" value="{{ video.id }}">
+                            <button class="btn btn-danger" type="submit">
+                                <i class="glyphicon glyphicon-thumbs-down"></i> {{ video.thumbs_down }}
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h1>Cadastrar Video</h1>
+        <hr>
+        <form action="/add_video" method="get">
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" name="name" class="form-control" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label>Tema</label>
+                <input type="text" name="theme" class="form-control" placeholder="Tema">
+            </div>
+            <input class="btn btn-success" type="submit" value="Cadastrar">
+            <input class="btn btn-info" type="reset" value="Limpar">
+        </form>
+    </div>
+
 {% endblock content %}
