@@ -6,8 +6,8 @@ Project made with Pyramid + Mongodb for Deeper System interview
 Install [docker-ce](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) from each documentation
 
 #### Setting up
-- run the comand `make build` on the project folder
 - copy the file `.env.example` with the name `.env`
+- run the comand `make build` on the project folder
 - run the comand `make install` for the *egg* creation
 
 ### Mongo
