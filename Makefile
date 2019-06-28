@@ -15,10 +15,7 @@ makemigrations:
 	docker-compose run pyramid python manage.py makemigrations
 
 test:
-	docker-compose run pyramid python manage.py test $(app)
-
-pytest:
-	docker-compose run pyramid pytest --disable-warnings -v $(app)
+	docker-compose run pyramid pytest --disable-warnings -v
 
 bash:
 	docker-compose run pyramid bash
