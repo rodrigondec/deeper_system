@@ -12,7 +12,8 @@ requires = [
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
     'waitress',
-    'mongoengine'
+    'mongoengine',
+    'python-decouple'
 ]
 
 tests_require = [
