@@ -39,8 +39,13 @@ down:
 build:
 	docker-compose build
 
-install:
+config.egg:
 	docker-compose run pyramid pip install -e ".[testing]"
+
+config.mongo_user:
+	docker-compose run mongo mongo --host mongo -u mongo -p mongo --eval 'db = db.getSiblingDB("mongo");db.createUser({user: "mongo", pwd: "mongo", roles: [{"role": "readWrite", "db": "mongo"}]})'
+
+config: config.egg config.mongo_user
 
 remove.volumes:
 	docker-compose down
