@@ -24,18 +24,22 @@
   </head>
 
   <body>
-
-    <div class="starter-template">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-md-2">
-            <img class="logo img-responsive" src="{{request.static_url('app:static/pyramid.png') }}" alt="pyramid web framework">
-          </div>
-          <div class="col-md-10">
+            <div class="col-md-2">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
             {% block content %}
                 <p>No content</p>
             {% endblock content %}
-          </div>
         </div>
         <div class="row">
           <div class="links">
@@ -51,10 +55,7 @@
             Copyright &copy; Pylons Project
           </div>
         </div>
-      </div>
     </div>
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
