@@ -10,19 +10,19 @@ class ViewTests(unittest.TestCase):
     def tearDown(self):
         testing.tearDown()
 
-    def test_my_view(self):
+    def test_home(self):
         from .views.default import DefaultViews
         request = testing.DummyRequest()
         inst = DefaultViews(request)
         info = inst.home()
-        # self.assertEqual(info['project'], 'deeper_system')
+        self.assertEqual(info['videos'], [])
 
     def test_howdy(self):
-        from .views.themes import howdy_view
+        from .views.themes import ThemeViews
         request = testing.DummyRequest()
-        response = howdy_view(request)
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Howdy!!', response.body)
+        inst = ThemeViews(request)
+        info = inst.ranking()
+        self.assertEqual(info['themes'], [])
 
 
 class FunctionalTests(unittest.TestCase):

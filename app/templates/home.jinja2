@@ -2,13 +2,13 @@
 
 {% block content %}
     <div class="col-md-8">
-        <h1>Listagem de Videos</h1>
+        <h1>Video Listing</h1>
         <hr>
         <div class="col-md-10">
             <table class="table">
                 <thead>
-                    <th class="col-md-4">Nome</th>
-                    <th class="col-md-3">Tema</th>
+                    <th class="col-md-4">Name</th>
+                    <th class="col-md-3">Theme</th>
                     <th class="col-md-1"></th>
                     <th class="col-md-1"></th>
                 </thead>
@@ -27,7 +27,7 @@
                     <td>
                         <form action="/down" method="get" style="display: inline">
                             <input hidden type="text" name="id" value="{{ video.id }}">
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-warning" type="submit">
                                 <i class="glyphicon glyphicon-thumbs-down"></i> {{ video.thumbs_down }}
                             </button>
                         </form>
@@ -38,19 +38,19 @@
         </div>
     </div>
     <div class="col-md-4">
-        <h1>Cadastrar Video</h1>
+        <h1>Submit Video</h1>
         <hr>
         <form action="/add_video" method="get">
             <div class="form-group">
-                <label>Nome</label>
-                <input type="text" name="name" class="form-control" placeholder="Nome">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
             <div class="form-group">
-                <label>Tema</label>
-                <input type="text" name="theme" class="form-control" placeholder="Tema">
+                <label>Theme</label>
+                <input type="text" name="theme" class="form-control" placeholder="Theme">
             </div>
-            <input class="btn btn-success" type="submit" value="Cadastrar">
-            <input class="btn btn-info" type="reset" value="Limpar">
+            <input class="btn btn-success" type="submit" value="Send">
+            <input class="btn btn-info" type="reset" value="Clear">
         </form>
     </div>
 

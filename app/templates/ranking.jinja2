@@ -7,8 +7,8 @@
         <div class="col-md-8 col-md-offset-2">
             <table class="table text-center">
                 <thead>
-                    <th class="col-md-1">Posição</th>
-                    <th class="col-md-3">Tema</th>
+                    <th class="col-md-1">#</th>
+                    <th class="col-md-3">Theme</th>
                     <th class="col-md-2">Rating</th>
                 </thead>
                 {% for index, theme in themes %}
@@ -19,11 +19,6 @@
                 </tr>
             {% endfor %}
             </table>
-            <ol>
-            {% for theme in themes %}
-                <li>{{ theme.name }} | {{ theme.rating }}</li>
-            {% endfor %}
-            </ol>
         </div>
     </div>
 {% endblock content %}
