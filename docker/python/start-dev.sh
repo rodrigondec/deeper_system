@@ -1,2 +1,2 @@
 #!/bin/sh
-python app.py
+pserve --reload development.ini
