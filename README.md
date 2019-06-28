@@ -1,6 +1,5 @@
 # Deeper System Pyramid Project
-
-
+Project made with Pyramid + Mongodb for Deeper System interview
 
 ## Install
 ### Docker + docker-compose
@@ -9,7 +8,7 @@ Install [docker-ce](https://docs.docker.com/install/) and [docker-compose](https
 #### Setting up
 - run the comand `make build` on the project folder
 - copy the file `.env.example` with the name `.env`
-- run the comand `make install`
+- run the comand `make install` for the *egg* creation
 
 ### Mongo
 Install [mongodb-org-shell](https://docs.mongodb.com/manual/administration/install-on-linux/) from the documentation
@@ -20,4 +19,4 @@ Install [mongodb-org-shell](https://docs.mongodb.com/manual/administration/insta
 - run `db.createUser({user: "mongo", pwd: "mongo", roles: ["readWrite"]})`
 
 ## Running Project
-Simply run the comand `make up` and _voilà_
+Simply run the comand `make up` and _*voilà*_
