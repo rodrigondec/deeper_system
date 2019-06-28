@@ -18,7 +18,7 @@ class ViewTests(unittest.TestCase):
         # self.assertEqual(info['project'], 'deeper_system')
 
     def test_howdy(self):
-        from .views.howdy import howdy_view
+        from .views.themes import howdy_view
         request = testing.DummyRequest()
         response = howdy_view(request)
         self.assertEqual(response.status_code, 200)
