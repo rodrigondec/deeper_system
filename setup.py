@@ -12,12 +12,14 @@ requires = [
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
     'waitress',
+    'mongoengine'
 ]
 
 tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest >= 3.7.4',
     'pytest-cov',
+    'flake8'
 ]
 
 setup(
