@@ -44,7 +44,7 @@ install:
 
 remove.volumes:
 	docker-compose down
-	docker volume rm deeper_system_postgres_data
+	docker volume rm deeper_system_mongo_data
 
 clear.python:
 	find . -type d -name __pycache__ -o \( -type f -name '*.py[co]' \) -print0 | xargs -0 rm -rf
