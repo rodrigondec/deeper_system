@@ -6,12 +6,14 @@
     {% for video in videos %}
         <li>
             Name: {{ video.name }} |
-            Theme: {{ video.theme.name }}
-            <form action="/up" method="get">
+            Theme: {{ video.theme.name }} |
+            Thumbs up: {{ video.thumbs_up }} |
+            Thumbs down: {{ video.thumbs_down }}
+            <form action="/up" method="get" style="display: inline">
                 <input hidden type="text" name="id" value="{{ video.id }}">
                 <input type="submit" value="Up">
             </form>
-            <form action="/down" method="get">
+            <form action="/down" method="get" style="display: inline">
                 <input hidden type="text" name="id" value="{{ video.id }}">
                 <input type="submit" value="Down">
             </form>

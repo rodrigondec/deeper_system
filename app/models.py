@@ -18,6 +18,6 @@ class Theme(Document):
 
 class Video(Document):
     name = StringField()
-    thumbs_up = IntField()
-    thumbs_down = IntField()
+    thumbs_up = IntField(default=0)
+    thumbs_down = IntField(default=0)
     theme = ReferenceField(Theme, reverse_delete_rule=NULLIFY)
