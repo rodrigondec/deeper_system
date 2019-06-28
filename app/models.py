@@ -1,4 +1,4 @@
-from mongoengine import connect, Document, StringField, IntField, ReferenceField, ListField, NULLIFY
+from mongoengine import connect, Document, StringField, IntField, ReferenceField, LazyReferenceField, ListField, NULLIFY
 from decouple import config
 
 
@@ -13,13 +13,14 @@ connect(
 
 class Theme(Document):
     name = StringField()
-    videos = ListField(ReferenceField("Video"))
+    videos = ListField(LazyReferenceField("Video"))
 
     @property
     def rating(self):
         up = 0
         down = 0
         for video in self.videos:
+            video = video.fetch()
             up += video.thumbs_up
             down += video.thumbs_down
         return up - (down/2)
