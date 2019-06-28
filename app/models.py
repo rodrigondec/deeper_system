@@ -15,6 +15,15 @@ class Theme(Document):
     name = StringField()
     videos = ListField(ReferenceField("Video"))
 
+    @property
+    def rating(self):
+        up = 0
+        down = 0
+        for video in self.videos:
+            up += video.thumbs_up
+            down += video.thumbs_down
+        return up - (down/2)
+
 
 class Video(Document):
     name = StringField()
