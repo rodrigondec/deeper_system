@@ -1,0 +1,29 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+    <h1>Videos</h1>
+    <ul>
+    {% for video in videos %}
+        <li>
+            Name: {{ video.name }} |
+            Theme: {{ video.theme.name }} |
+            Thumbs up: {{ video.thumbs_up }} |
+            Thumbs down: {{ video.thumbs_down }}
+            <form action="/up" method="get" style="display: inline">
+                <input hidden type="text" name="id" value="{{ video.id }}">
+                <input type="submit" value="Up">
+            </form>
+            <form action="/down" method="get" style="display: inline">
+                <input hidden type="text" name="id" value="{{ video.id }}">
+                <input type="submit" value="Down">
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <form action="/add_video" method="get">
+        Nome: <input type="text" name="name">
+        Tema: <input type="text" name="theme">
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Limpar">
+    </form>
+{% endblock content %}
