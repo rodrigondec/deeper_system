@@ -8,7 +8,7 @@ Install [docker-ce](https://docs.docker.com/install/) and [docker-compose](https
 #### Setting up
 - copy the file `.env.example` with the name `.env`
 - run the comand `make build` on the project folder
-- run the comand `make config` for the *egg* and mongo user creation 
+- run the comand `make config` for the *egg* and *mongo user* creation 
 
 ## Running Project
-Simply run the comand `make up` and _*voilà*_
+Simply run the comand `make up` and *voilà*
